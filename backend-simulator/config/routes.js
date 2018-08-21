@@ -24,8 +24,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'get /api/status': 'StatusController.status',
-
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
@@ -41,7 +39,9 @@ module.exports.routes = {
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
-
+  'post /api/login': 'AuthController.login',
+  'get /api/logout': 'AuthController.logout',
+  'get /api/statistics': 'DashboardController.statistics',
 
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
