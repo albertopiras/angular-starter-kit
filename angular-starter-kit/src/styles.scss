@@ -1,0 +1,186 @@
+/*********************
+** Bootstrap 4 SCSS **
+**********************/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+$font-family-base: 'Roboto',
+sans-serif; // add this line first before importing bootstrap
+$theme-colors: ( "primary": #000000,
+"danger": green);
+// Bootstrap and its default variables
+@import "node_modules/bootstrap/scss/bootstrap";
+// regular style toast
+@import "~ngx-toastr/toastr.css";
+/*********************
+** Angular Material SCSS **
+**********************/
+
+// https://material.angular.io/guide/theming-your-components
+@import '~@angular/material/theming';
+// https://github.com/angular/material2/blob/master/src/lib/core/theming/prebuilt/indigo-pink.scss
+@include mat-core();
+$primary: mat-palette($mat-indigo);
+$accent : mat-palette($mat-pink,
+A200,
+A100,
+A400);
+$theme: mat-light-theme($primary,
+$accent);
+@include angular-material-theme($theme);
+// customize colors following https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+// &
+// https://github.com/angular/material2/blob/master/src/lib/core/theming/_palette.scss
+/**Other**/
+
+
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: mat-color($primary);
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.page-title{
+    line-height: 4.5rem;
+    min-height: 4.5rem;
+}
+
+.margin-top-large {
+    margin-top: 2rem;
+}
+
+.margin-md-top {
+    margin-top: 1rem;
+}
+
+.padding-1{
+    padding: 1rem;
+}
+
+.padding-2{
+    padding: 2rem;
+}
+
+.padding-3{
+    padding: 3rem;
+}
+
+.border-bottom {
+    border-bottom: 1px solid gray;
+}
+
+.shadow-1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all ease 0.2s;
+}
+
+.shadow-1:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.shadow-2 {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.shadow-3 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.shadow-4 {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.shadow-5 {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.full-width {
+    width: 100%;
+}
+
+//  icons
+/* Rules for sizing the icon. */
+
+.fa.md-18 {
+    font-size: 18px;
+}
+
+.fa.md-24 {
+    font-size: 24px;
+}
+
+.fa.md-36 {
+    font-size: 36px;
+}
+
+.fa.md-48 {
+    font-size: 48px;
+}
+
+.fa.big {
+    font-size: 10rem;
+}
+
+/* Rules for using icons as black on a light background. */
+
+.fa.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.fa.md-dark.md-inactive {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+
+.fa.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+
+.fa.md-light.md-inactive {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+// Tables
+.selected-row {
+    background: lightblue;
+}
+
+// images
+.img-thumbnail {
+    border: none;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.footer{
+    padding: 3rem;
+    background-color: mat-color($primary);
+    margin-top: 2rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.mat-slide-toggle-bar, .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar{
+        background-color: rgba(63, 81, 181, 0.23);
+    }
+    .mat-slide-toggle-thumb,.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+        background-color: #3f51b5;
+    }

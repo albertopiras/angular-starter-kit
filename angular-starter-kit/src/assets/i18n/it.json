@@ -1,0 +1,22 @@
+{
+    "app":{
+        "title":"Angular Stater Kit"
+    },
+    "pages": {
+        "login": {
+            "user": "Utente",
+            "password": "Password",
+            "do_login": "Entra",
+            "login": "login",
+            "login_title": "Accedi"
+        },
+        "dashboard":{
+        },
+        "cars":{
+        }
+    },
+    "general": {
+        "filter": "filter",
+        "filters": "filters"
+    }
+}
