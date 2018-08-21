@@ -1,0 +1,24 @@
+<div class="row ">
+    <div class="col-12">
+        <h3 class="text-center">{{ 'success' | translate }}</h3>
+        <div class="row e">
+            <!-- left area -->
+            <div class="col-6">
+                <mat-card class="text-center">
+                    <mat-card-header>
+                        <mat-card-title>{{ 'cars' | translate }}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div style="display: block">
+                            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [colors]="doughnutChartColors"
+                                [options]="options"></canvas>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        {{ 'home.success' | translate }} : {{successPercentage}}%
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

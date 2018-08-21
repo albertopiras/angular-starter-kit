@@ -1,0 +1,35 @@
+.mat-card-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.mat-card-content {
+    text-align: center;
+    height: 160px;
+    margin: 16px 0;
+}
+
+.mat-card-header {
+    justify-content: center;
+}
+
+.mat-card-footer {
+    margin: 0;
+    font-size: 1.4rem;
+    text-decoration: underline;
+}
+
+.mat-card-header{
+    border-bottom: 1px solid #80808033;
+    padding-bottom: 1rem;
+}
+
+.right-content{
+    border-left: 1px solid #80808033;
+}
+
+
+.list-group-item{
+    border: 0;
+}
