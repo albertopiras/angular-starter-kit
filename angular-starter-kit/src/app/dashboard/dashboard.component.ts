@@ -13,33 +13,37 @@ import { timeout, delay } from 'rxjs/operators';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class  DashboardComponent implements OnInit, OnDestroy {
+export class DashboardComponent implements OnInit, OnDestroy {
 
-  // Processing time
   public status: number;
-
+  public totalSales: {};
+  
+  // Processing time
   private pollingTimeout = 3000;
   private pollerStatistics;
 
-  // Success percentage
-  public successPercentage;
-
-  // Doughnut
-  public doughnutChartLabels: string[] = ['cars in success', 'cars in error'];
-  public doughnutChartType: string = 'doughnut';
-  public doughnutChartData: number[] = [0, 0];
-  public doughnutChartColors = [
+  // chart
+  public lineChartData = [0,0];
+  public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'];
+  public lineChartOptions: any = {
+    responsive: true
+  };
+  public lineChartColors: Array<any> = [
     {
-      backgroundColor: [
-        "#4CAF50",
-        "#FFA726"
-      ],
-      hoverBorderColor: [
-        "#1B5E20",
-        "#EF6C00"
-      ]
+      backgroundColor: '#5e9fe061',
+      borderColor: '#1976d2',
+    },
+    { 
+      backgroundColor: '#dd00313b',
+      borderColor: '#dd0031',
+    },
+    { 
+      backgroundColor: 'rgba(148,159,177,0.2)',
+      borderColor: 'rgba(148,159,177,1)',
     }
   ];
+  public lineChartLegend: boolean = true;
+  public lineChartType: string = 'line';
   public options = {
     legend: {
       position: 'right', // just to position, in case you use it
@@ -50,7 +54,7 @@ export class  DashboardComponent implements OnInit, OnDestroy {
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-    this.retrieveDashboardStatistics();
+    this.retrieveDashboardStatistics(false);
   }
 
   ngOnDestroy() {
@@ -58,12 +62,12 @@ export class  DashboardComponent implements OnInit, OnDestroy {
   }
 
   //polling home statistics
-  retrieveDashboardStatistics() {
+  retrieveDashboardStatistics(wait:boolean) {
     this.dashboardService.getDashboardStatistics().pipe(
       finalize(() => {
         this.pollerStatistics = setTimeout(() => {
-          this.retrieveDashboardStatistics();
-        }, this.pollingTimeout);
+          this.retrieveDashboardStatistics(true);
+        }, !wait? 0 : this.pollingTimeout);
       }
       )
     )
@@ -74,20 +78,14 @@ export class  DashboardComponent implements OnInit, OnDestroy {
       })
   }
 
-
-  updateDashboard(data: any) {
-    this.status = parseInt(data['data']['status']);
-    this.updateChart(data['data']['total_cars'], data['data']['failed_cars']);
+  updateDashboard(response: any) {
+    this.status = parseInt(response['data']['status']);
+    this.updateChart(response['data']['sales']['list']);
+    this.totalSales = response['data']['sales']['totals'];
   }
 
-  updateChart(total: number, failed: number) {
-    const successCars = total - failed;
-    this.doughnutChartData = [successCars, failed];
-    this.successPercentage = this.getSuccessPercentage(total, successCars);
-  }
-
-  getSuccessPercentage(total: number, success: number) {
-    return ((100 * success) / total).toFixed(2);
+  updateChart(list: Array<any>) {
+    this.lineChartData = list;
   }
 
   // events
@@ -98,5 +96,7 @@ export class  DashboardComponent implements OnInit, OnDestroy {
   public chartHovered(e: any): void {
     console.log(e);
   }
+
+
 
 }

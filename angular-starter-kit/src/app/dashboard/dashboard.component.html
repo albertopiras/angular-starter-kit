@@ -1,23 +1,28 @@
 <div class="row ">
-    <div class="col-12">
-        <h3 class="text-center">{{ 'success' | translate }}</h3>
-        <div class="row e">
-            <!-- left area -->
-            <div class="col-6">
-                <mat-card class="text-center">
+    <div class="col">
+        <h3 class="text-center">{{ 'pages.dashboard.title' | translate }}</h3>
+        <div class="row margin-large-top">
+            <div class="col">
+
+                <mat-card class="text-center" style="overflow: auto">
                     <mat-card-header>
-                        <mat-card-title>{{ 'cars' | translate }}</mat-card-title>
+                        <mat-card-title>{{ 'pages.dashboard.chartTitle' | translate }}</mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
                         <div style="display: block">
-                            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [colors]="doughnutChartColors"
-                                [options]="options"></canvas>
+                            <canvas baseChart class="chart" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
+                                [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
                         </div>
                     </mat-card-content>
-                    <mat-card-footer>
-                        {{ 'home.success' | translate }} : {{successPercentage}}%
-                    </mat-card-footer>
                 </mat-card>
+            </div>
+            <div class="col">
+
+                <div class="">
+              samsung: {{totalSales.samsung}}
+
+
+              apple: {{totalSales.apple}}
             </div>
         </div>
     </div>
