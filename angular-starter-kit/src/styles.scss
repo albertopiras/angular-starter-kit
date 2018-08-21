@@ -1,37 +1,101 @@
-/*********************
-** Bootstrap 4 SCSS **
-**********************/
-
+/********************************** Bootstrap 4 SCSS ********************************/
 @import url('https://fonts.googleapis.com/css?family=Roboto:400');
 $font-family-base: 'Roboto',
 sans-serif; // add this line first before importing bootstrap
 $theme-colors: ( "primary": #000000,
-"danger": green);
+"danger": RED);
 // Bootstrap and its default variables
 @import "node_modules/bootstrap/scss/bootstrap";
-// regular style toast
-@import "~ngx-toastr/toastr.css";
-/*********************
-** Angular Material SCSS **
-**********************/
 
-// https://material.angular.io/guide/theming-your-components
+
+/********************************** Toastr *****************************************/
+@import "~ngx-toastr/toastr.css";
+
+
+/********************************* Angular Material SCSS *****************************/
 @import '~@angular/material/theming';
-// https://github.com/angular/material2/blob/master/src/lib/core/theming/prebuilt/indigo-pink.scss
+// Material colors: https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+// Source code of angular palette, just to know how it works:  https://github.com/angular/material2/blob/master/src/lib/core/theming/_palette.scss
+// Theme your components: https://material.angular.io/guide/theming-your-components
+
 @include mat-core();
-$primary: mat-palette($mat-indigo);
-$accent : mat-palette($mat-pink,
-A200,
-A100,
-A400);
+
+/******* CREATE CUSTOM COLOR PALETTE:  ********/
+/******* http://mcg.mbitson.com/#!?custompalette=%231f5fad&themename=in ******/
+$md-angularstarterkit-palette: (
+    50 : #e3effa,
+    100 : #bad6f2,
+    200 : #8cbbe9,
+    300 : #5e9fe0,
+    400 : #3c8bd9,
+    500 : #1976d2,
+    600 : #166ecd,
+    700 : #1263c7,
+    800 : #0e59c1,
+    900 : #0846b6,
+    A100 : #e0eaff,
+    A200 : #adc6ff,
+    A400 : #7aa3ff,
+    A700 : #6191ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-angularstarterkit-palette-accent: (
+    50 : #fbe0e6,
+    100 : #f5b3c1,
+    200 : #ee8098,
+    300 : #e74d6f,
+    400 : #e22650,
+    500 : #dd0031,
+    600 : #d9002c,
+    700 : #d40025,
+    800 : #cf001f,
+    900 : #c70013,
+    A100 : #ffeff0,
+    A200 : #ffbcbf,
+    A400 : #ff898e,
+    A700 : #ff6f76,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$primary: mat-palette($md-angularstarterkit-palette);
+$accent : mat-palette($md-angularstarterkit-palette-accent);
 $theme: mat-light-theme($primary,
 $accent);
 @include angular-material-theme($theme);
-// customize colors following https://material.io/design/color/the-color-system.html#tools-for-picking-colors
-// &
-// https://github.com/angular/material2/blob/master/src/lib/core/theming/_palette.scss
-/**Other**/
 
+
+/********************************* App main SCSS *****************************/
 
 html,body{
     height: 100%;
@@ -180,8 +244,8 @@ nav {
 }
 
 .mat-slide-toggle-bar, .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar{
-        background-color: rgba(63, 81, 181, 0.23);
-    }
-    .mat-slide-toggle-thumb,.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
-        background-color: #3f51b5;
-    }
+    background-color: rgba(63, 81, 181, 0.23);
+}
+.mat-slide-toggle-thumb,.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #3f51b5;
+}
