@@ -20,7 +20,7 @@ export const environment = {
     URL: {
       FULL: "http://localhost:1337/api"
     },
-    WS: "ws://localhost:49707",
+    WS: "ws://localhost:5500",
     ENTRY_POINTS: {
       SIGNIN: "/login",
       SIGNOUT: "/logout",

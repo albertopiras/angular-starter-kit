@@ -1,0 +1,58 @@
+#loginPage {
+    // color: #ffffff;
+    height: 100%;
+    overflow: auto;
+    background: url(/assets/images/cubes-background.jpg) left top;
+    background-size: cover;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    /* background: #C4BCB1; */
+    /* background: url(/assets/images/cubes-background.jpg) repeat-x 0 100%, -moz-linear-gradient(0% 100% 90deg, #C4BCB1, #fff); */
+    /* background: url(/assets/images/cubes-background.jpg) repeat-x 0 100%, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#C4BCB1)); */
+  }
+
+  /* #loginPage:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(/assets/images/cubes-background.jpg) no-repeat left top;
+    opacity: .3; 
+  } */
+
+
+.content {
+    padding: 1em;
+}
+
+.form-title {
+    // color: 
+    margin-bottom: 1em;
+}
+
+.login-form {
+    padding: 3rem;
+    flex: 1 auto;
+    max-width: 450px;
+    margin: auto;
+    background: #fffffff3;
+}
+
+#appTitle {
+    text-align: center;
+    width: 100%;
+    color:#ffffff;
+    font-weight: bold;
+    flex: 1 auto;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width: 115px;
+        margin-right: -23px;
+    }
+}
