@@ -9,8 +9,16 @@ module.exports = {
       {
         "data": {
           "status": chance.pick(['1', '2', '3', '0']),
-          "total_cars": 147440,
-          "failed_cars": 129941
+          "sales": {
+            "list": [
+              { data: Array.from({ length: 8 }, () => Math.floor(Math.random() * 1000)), label: 'Samsung Gs9' },
+              { data: Array.from({ length: 8 }, () => Math.floor(Math.random() * 1000)), label: 'iPhone X' }
+            ],
+            "totals": {
+              "apple":  Math.floor(Math.random() *2000),
+              "samsung":  Math.floor(Math.random() *2000),
+            }
+          }
         }
       }
 
