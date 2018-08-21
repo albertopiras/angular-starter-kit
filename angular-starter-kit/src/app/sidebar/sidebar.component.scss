@@ -1,0 +1,46 @@
+#sideNav {
+    >.nav-link {
+        // background: lightgrey;
+        padding-left: 2rem;
+        border-right: 1px solid gray;
+    }
+    .nav-link, .mat-expansion-panel-header, .mat-expansion-panel-body{
+        background: #efefef;
+        text-align: center;
+        vertical-align: middle;
+        align-items: center;
+        display: flex;
+        justify-content: left;
+    }
+
+    ::ng-deep .mat-expansion-panel-body{
+        background: #efefef;
+        padding-right: 0;
+    }
+    .nav-link.active {
+        border-right: none;
+        background: #ffffff;
+    }
+    .nav-item {
+        line-height: 3.5rem;
+        border-bottom: 1px solid gray;
+        min-height: 3.5rem;
+    }
+    .mat-expansion-panel-header {
+        // height: 3.5rem !important;
+        font-size: 1rem;
+    }
+    .mat-expansion-panel-body {}
+    .mat-expansion-panel .nav-item:last-child {
+        border: none;
+    }
+
+    ::ng-deep .mat-expansion-panel {
+        box-shadow: none;
+    }
+
+    .fa{
+        padding: 0 1rem;
+    }
+    
+}

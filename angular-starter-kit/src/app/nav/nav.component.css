@@ -1,0 +1,38 @@
+nav {
+    padding: 0;
+    color: #ffffff;
+    height: auto;
+}
+nav a{
+    color:#ffffff;
+}
+
+nav .nav-item{
+    line-height: 2.5rem;
+}
+
+nav .nav-item .material-icons{
+    vertical-align: middle;
+}
+
+nav .nav-item:hover{
+    background-color: #00000029;
+    cursor: pointer;
+}
+
+.navbar-brand i {
+    font-size: 0.7em;
+}
+
+#mainNavList {
+    margin-left: auto;
+    align-items: center;
+}
+
+#mainNavList .nav-item{
+    border-left: 2px solid #ffffff24;
+}
+
+.navbar-brand{
+    padding-left: 1em;
+}

@@ -1,0 +1,28 @@
+<ul id="sideNav" class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/home/dashboard" 
+    routerLinkActive="active"><i class="fa fa-bar-chart fa-2x"></i>&nbsp;Dashboard</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/home/cars/" 
+    routerLinkActive="active"><i class="fa fa-list fa-2x"></i>&nbsp;Cars</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="javascript:void(0)" ><i class="fa fa-file fa-2x"></i>&nbsp;Events</a>
+  </li>
+  <li class="nav-item">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header style="padding-left:0" [collapsedHeight]="'73px'" [expandedHeight]="'73px'">
+            <a class="nav-link disabled" href="javascript:void(0)"><i class="fa fa-wrench fa-2x"></i>&nbsp;Settings</a>
+          </mat-expansion-panel-header >
+          <li class="nav-item">
+            <a class="nav-link" href="#">Settings 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Settings 2</a>
+          </li>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </li>
+</ul>
