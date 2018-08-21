@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+.mat-card{
+    width: 100%;
+}
+
 .mat-card-content {
     text-align: center;
     margin: 16px 0;
@@ -31,4 +35,44 @@
 
 .list-group-item{
     border: 0;
+}
+
+
+.sale-cards{
+    display: flex;
+    justify-content: space-around;
+    align-content: space-between;
+    flex-direction: column;
+}
+
+.sale-card{
+    margin-top: 2rem;
+    background: #8686863d;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.item{
+    width: 50%;
+    float: left;
+    line-height: 6rem;
+}
+
+.samsung{
+    color: #ffffff;
+    background: blue;
+    font-weight: bold;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+}
+
+.lett-spacing{
+    letter-spacing: 5px;
+}
+
+.apple{
+    background: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.7rem;
 }

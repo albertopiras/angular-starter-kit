@@ -2,8 +2,7 @@
     <div class="col">
         <h3 class="text-center">{{ 'pages.dashboard.title' | translate }}</h3>
         <div class="row margin-large-top">
-            <div class="col">
-
+            <div class="col-6 flex">
                 <mat-card class="text-center" style="overflow: auto">
                     <mat-card-header>
                         <mat-card-title>{{ 'pages.dashboard.chartTitle' | translate }}</mat-card-title>
@@ -16,13 +15,32 @@
                     </mat-card-content>
                 </mat-card>
             </div>
-            <div class="col">
-
-                <div class="">
-              samsung: {{totalSales.samsung}}
-
-
-              apple: {{totalSales.apple}}
+            <div class="col-6 flex">
+                <mat-card class="text-center" style="overflow: auto">
+                    <mat-card-header>
+                        <mat-card-title>Total sales</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="sale-cards">
+                            <div class="sale-card">
+                                <div class="item samsung">
+                                    <span class="lett-spacing">Samsung</span> s9
+                                </div>
+                                <div class="item">
+                                    {{totalSales.samsung}}
+                                </div>
+                            </div>
+                            <div class="sale-card">
+                                <div class="item apple">
+                                    iPhone X
+                                </div>
+                                <div class="item">
+                                    {{totalSales.apple}}
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
             </div>
         </div>
     </div>
