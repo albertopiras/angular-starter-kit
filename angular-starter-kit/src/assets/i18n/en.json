@@ -11,7 +11,10 @@
             "login": "Login",
             "login_title": "Sign in"
         },
-        "dashboard": {},
+        "dashboard": {
+            "title":"Sales",
+            "chartTitle": "Sales of Samsung & iPhone"
+        },
         "cars": {}
     },
     "general": {

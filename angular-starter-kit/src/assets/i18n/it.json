@@ -12,6 +12,8 @@
             "login_title": "Accedi"
         },
         "dashboard":{
+            "title": "Sales",
+            "chartTitle": "Sales of Samsung & iPhone"
         },
         "cars":{
         }

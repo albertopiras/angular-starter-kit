@@ -25,3 +25,26 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+<!-- 
+libraries and frameworks:
+
+https://github.com/scttcper/ngx-toastr 
+
+https://github.com/ngx-translate/core
+
+https://github.com/valor-software/ng2-charts
+
+chart.js
+
+angular material
+
+primeNg
+
+bootstrap 4
+
+
+
+-->
+
