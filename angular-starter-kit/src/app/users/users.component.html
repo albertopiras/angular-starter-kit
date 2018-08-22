@@ -1,3 +1,11 @@
-<p>
-  users works!
-</p>
+<h3 class="text-center page-title border-bottom">{{ 'pages.users.title' | translate }}</h3>
+<div class="row margin-top-large">
+  <div class="col-12">
+    <users-filter></users-filter>
+  </div>
+</div>
+<div class="row margin-top-large">
+  <div class="col-12">
+    <users-list (singleRowSelection)="updateUserPreview($event)"></users-list>
+  </div>
+</div>

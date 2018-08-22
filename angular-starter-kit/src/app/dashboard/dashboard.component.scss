@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-.mat-card{
+.mat-card {
     width: 100%;
 }
 
@@ -23,54 +23,60 @@
     text-decoration: underline;
 }
 
-.mat-card-header{
+.mat-card-header {
     border-bottom: 1px solid #80808033;
     padding-bottom: 1rem;
 }
 
-.right-content{
+.right-content {
     border-left: 1px solid #80808033;
 }
 
-
-.list-group-item{
+.list-group-item {
     border: 0;
 }
 
-
-.sale-cards{
+.sale-cards {
     display: flex;
     justify-content: space-around;
     align-content: space-between;
     flex-direction: column;
 }
 
-.sale-card{
+.sale-card {
     margin-top: 2rem;
     background: #8686863d;
     font-size: 3rem;
     font-weight: bold;
 }
 
-.item{
+.item {
     width: 50%;
     float: left;
     line-height: 6rem;
+    padding: 0 1rem;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-.samsung{
+.samsung {
     color: #ffffff;
     background: blue;
     font-weight: bold;
     font-size: 1.7rem;
     text-transform: uppercase;
+    // @media (max-width: 1199.98px) {
+    //     font-size: 1.2rem;
+    // }
 }
 
-.lett-spacing{
+.lett-spacing {
     letter-spacing: 5px;
 }
 
-.apple{
+.apple {
     background: #000000;
     color: #ffffff;
     font-weight: bold;

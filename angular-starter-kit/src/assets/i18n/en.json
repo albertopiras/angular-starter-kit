@@ -18,7 +18,20 @@
         },
         "users": {
             "menuTitle":"Users",
-            "title": "Users"
+            "title": "Users",
+            "name":"Name",
+            "surname":"Surname",
+            "address":"Address",
+            "gender":"Gender",
+            "email":"Email",
+            "filter":{
+                "do_filter":"Filter",
+                "male":"Male",
+                "female":"Female"
+            }
+        },
+        "invoices":{
+            "menuTitle":"Invoices"
         }
     },
     "general": {

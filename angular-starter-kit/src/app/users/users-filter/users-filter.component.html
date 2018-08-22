@@ -1,0 +1,36 @@
+<mat-card class="text-center">
+  <mat-card-header>
+    <mat-card-title>{{ 'general.filters' | translate }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form (submit)="onSubmit()" #usersForm="ngForm">
+      <div class="form-row no-margin">
+        <div class="col col-lg-3 col-md-6 ">
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="{{ 'pages.users.name' | translate}}" ngModel id="barcode" name="barcode">
+          </mat-form-field>
+        </div>
+        <div class="col col-lg-3 col-md-6 ">
+            <mat-button-toggle-group #genderGroup="matButtonToggleGroup">
+              <mat-button-toggle value="Male">
+                  {{ 'pages.users.filter.male' | translate}}
+              </mat-button-toggle>
+              <mat-button-toggle value="Female">
+                  {{ 'pages.users.filter.female' | translate}}
+              </mat-button-toggle>
+              <mat-button-toggle value="">
+                  {{ 'pages.users.filter.both' | translate}}
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-footer>
+    <button id="tubesFilter" [disabled]="isSubmitting" mat-stroked-button class="primary" (click)="onSubmit()">
+      <i class="fa fa-search"></i>
+      {{'pages.users.filter.do_filter' | translate}}
+    </button>
+  </mat-card-footer>
+</mat-card>

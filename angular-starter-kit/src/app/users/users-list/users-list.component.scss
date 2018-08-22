@@ -1,0 +1,15 @@
+.mat-spinner {
+    margin: auto;
+}
+
+::ng-deep {
+    .mat-row {
+        cursor: pointer;
+        user-select: none;
+    }
+    thead>tr>.mat-header-cell {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #000000;
+    }
+}

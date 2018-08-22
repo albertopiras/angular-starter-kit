@@ -35,4 +35,5 @@ nav .nav-item:hover{
 
 .navbar-brand{
     padding-left: 1em;
+    margin: 0;
 }

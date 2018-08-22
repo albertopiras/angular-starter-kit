@@ -8,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent implements OnInit {
 
   constructor() { }
+  selectedUser = {};
 
   ngOnInit() {
+
+  }
+
+  updateUserPreview(event:Event){
+    console.log('parent - event  ' + JSON.stringify(event));
+    this.selectedUser = event;
   }
 
 }

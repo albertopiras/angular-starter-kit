@@ -21,7 +21,8 @@ export const environment = {
       SIGNIN: "/login",
       SIGNOUT: "/logout",
       DASHBOARD: "/statistics",
-      STATUS:"/status"
+      STATUS:"/status",
+      USERS:"/users"
     }
   }
 };
