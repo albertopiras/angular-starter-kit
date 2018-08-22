@@ -27,7 +27,8 @@
             "filter":{
                 "do_filter":"Filtra",
                 "male":"Uomo",
-                "female":"Donna"
+                "female":"Donna",
+                "both":"Entrambi"
             }
         },
         "invoices":{

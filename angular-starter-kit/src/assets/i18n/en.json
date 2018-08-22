@@ -27,7 +27,8 @@
             "filter":{
                 "do_filter":"Filter",
                 "male":"Male",
-                "female":"Female"
+                "female":"Female",
+                "both":"Both"
             }
         },
         "invoices":{
