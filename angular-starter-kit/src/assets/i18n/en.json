@@ -12,10 +12,14 @@
             "login_title": "Sign in"
         },
         "dashboard": {
+            "menuTitle":"Dashboard",
             "title":"Sales",
             "chartTitle": "Sales of Samsung & iPhone"
         },
-        "cars": {}
+        "users": {
+            "menuTitle":"Users",
+            "title": "Users"
+        }
     },
     "general": {
         "filter": "Filter",

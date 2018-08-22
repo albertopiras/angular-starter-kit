@@ -1,47 +1,43 @@
-<div class="row ">
-    <div class="col">
-        <h3 class="text-center">{{ 'pages.dashboard.title' | translate }}</h3>
-        <div class="row margin-large-top">
-            <div class="col-6 flex">
-                <mat-card class="text-center" style="overflow: auto">
-                    <mat-card-header>
-                        <mat-card-title>{{ 'pages.dashboard.chartTitle' | translate }}</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <div style="display: block">
-                            <canvas baseChart class="chart" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
-                                [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+<h3 class="text-center page-title">{{ 'pages.dashboard.title' | translate }}</h3>
+<div class="row">
+    <div class="col-6 flex">
+        <mat-card class="text-center" style="overflow: auto">
+            <mat-card-header>
+                <mat-card-title>{{ 'pages.dashboard.chartTitle' | translate }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div style="display: block">
+                    <canvas baseChart class="chart" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
+                        [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-6 flex">
+        <mat-card class="text-center" style="overflow: auto">
+            <mat-card-header>
+                <mat-card-title>Total sales</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="sale-cards">
+                    <div class="sale-card">
+                        <div class="item samsung">
+                            <span class="lett-spacing">Samsung</span> s9
                         </div>
-                    </mat-card-content>
-                </mat-card>
-            </div>
-            <div class="col-6 flex">
-                <mat-card class="text-center" style="overflow: auto">
-                    <mat-card-header>
-                        <mat-card-title>Total sales</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <div class="sale-cards">
-                            <div class="sale-card">
-                                <div class="item samsung">
-                                    <span class="lett-spacing">Samsung</span> s9
-                                </div>
-                                <div class="item">
-                                    {{totalSales.samsung}}
-                                </div>
-                            </div>
-                            <div class="sale-card">
-                                <div class="item apple">
-                                    iPhone X
-                                </div>
-                                <div class="item">
-                                    {{totalSales.apple}}
-                                </div>
-                            </div>
+                        <div class="item">
+                            {{totalSales.samsung}}
                         </div>
-                    </mat-card-content>
-                </mat-card>
-            </div>
-        </div>
+                    </div>
+                    <div class="sale-card">
+                        <div class="item apple">
+                            iPhone X
+                        </div>
+                        <div class="item">
+                            {{totalSales.apple}}
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
     </div>
 </div>

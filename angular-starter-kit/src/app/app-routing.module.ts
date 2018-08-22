@@ -5,6 +5,8 @@ import { AuthGuard } from "./auth-guard.service";
 import { ErrorPageComponent } from "./error-page/error-page.component";
 import { LoginComponent } from "./login/login.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { UsersComponent } from "./users/users.component";
+import { UserDetailComponent } from "./users/user-detail/user-detail.component";
 
 const appRoutes: Routes = [
     {
@@ -27,25 +29,25 @@ const appRoutes: Routes = [
                 path: 'dashboard',
                 component: DashboardComponent
                 // resolve: { server: ServerResolver }
+            },
+            {
+                path: 'users',
+                children: [
+                    {
+                        path: '',
+                        redirectTo: 'list',
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: 'list',
+                        component:  UsersComponent 
+                    },
+                    {
+                        path: ':id',
+                        component: UserDetailComponent 
+                    }
+                ]
             }
-            // {
-            //     path: 'users',
-            //     children: [
-            //         {
-            //             path: '',
-            //             redirectTo: 'list',
-            //             pathMatch: 'full'
-            //         },
-            //         {
-            //             path: 'list'
-            //             // component: 
-            //         },
-            //         {
-            //             path: ':id'
-            //             // component: 
-            //         }
-            //     ]
-            // }
         ]
     },
     {
@@ -58,7 +60,7 @@ const appRoutes: Routes = [
         component: ErrorPageComponent,
         data: { message: 'Error : Page not Found!' }
     },
-    //importante che il default sia alla fine
+    //important: Default must be at the routes end
     {
         path: '**',
         redirectTo: '/not-found'

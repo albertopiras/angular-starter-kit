@@ -32,6 +32,8 @@ import { NavComponent } from './nav/nav.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { StatusService } from './status.service';
 import { NGPrimeModule } from './primeng.module';
+import { UsersComponent } from './users/users.component';
+import { UserDetailComponent } from './users/user-detail/user-detail.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { NGPrimeModule } from './primeng.module';
     ErrorPageComponent,
     DashboardComponent,
     NavComponent,
-    SidebarComponent
+    SidebarComponent,
+    UsersComponent,
+    UserDetailComponent
   ],
   entryComponents: [],
   imports: [
