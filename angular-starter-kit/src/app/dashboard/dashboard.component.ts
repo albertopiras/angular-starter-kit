@@ -16,7 +16,7 @@ import { timeout, delay } from 'rxjs/operators';
 export class DashboardComponent implements OnInit, OnDestroy {
 
   public status: number;
-  public totalSales: {};
+  public totalSales: any;
   
   // Processing time
   private pollingTimeout = 3000;

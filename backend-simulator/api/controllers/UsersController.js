@@ -26,10 +26,14 @@ module.exports = {
       });
     }
 
+    if (offset & pagesize) {
+      tempUsersResponse.slice(offset, offset + pagesize);
+    }
+
     var response =
       {
         "data": {
-          "users": tempUsersResponse.slice(offset, offset + pagesize),
+          "users": tempUsersResponse.slice(),
           "total_items": tempUsersResponse.length
         }
       }

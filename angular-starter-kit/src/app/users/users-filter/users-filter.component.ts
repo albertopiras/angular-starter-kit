@@ -31,7 +31,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class UsersFilterComponent implements OnInit {
 
-  private isSubmitting: boolean = false;
+  isSubmitting: boolean = false;
 
   name: String;
 

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   @ViewChild('loginForm') currentForm: NgForm;
 
-  private isSubmitting: boolean = false;
+  isSubmitting: boolean = false;
 
   constructor(private router: Router, private authService: AuthService,
     private toastrService: ToastrService) { }
@@ -30,7 +30,11 @@ export class LoginComponent implements OnInit {
     this.authService.login(user).subscribe(() => {
     }, (error) => {
       this.isSubmitting = false;
-      this.toastrService.error(JSON.stringify(error.error.error_code), 'Login  Error:', {
+      let errMsg = "login_error";
+      if (error && error['error']) {
+        errMsg = error.error.error_code;
+      }
+      this.toastrService.error(JSON.stringify(errMsg), 'Login  Error:', {
         timeOut: 3000,
       });
     })

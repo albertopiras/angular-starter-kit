@@ -14,7 +14,7 @@ export const environment = {
   },
   BACKEND: {
     URL: {
-      FULL: "http://localhost:1337/api"
+      FULL: "https://angular-starter-kit-backend.herokuapp.com/api"
     },
     WS: "ws://localhost:5500",
     ENTRY_POINTS: {
