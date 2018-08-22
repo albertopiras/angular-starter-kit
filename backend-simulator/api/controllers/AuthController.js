@@ -1,6 +1,5 @@
 var _ = require('lodash');
 
-
 const ADMIN_CREDENTIALS = {
   username: 'admin',
   password: 'admin'
