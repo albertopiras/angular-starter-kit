@@ -37,7 +37,6 @@ module.exports = {
 
   getUser: function (id) {
     return _.find(this.getUsers(), function (chr) {
-      console.log(chr);
       return chr.id === id;
     });
   }

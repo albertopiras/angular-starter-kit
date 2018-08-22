@@ -43,6 +43,7 @@ module.exports.routes = {
   'get /api/logout': 'AuthController.logout',
   'get /api/statistics': 'DashboardController.statistics',
   'get /api/users': 'UsersController.list',
+  'post /api/users': 'UsersController.list',
   'get /api/users/:id': 'UsersController.getDetails',
 
 

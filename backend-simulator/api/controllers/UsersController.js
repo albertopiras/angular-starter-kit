@@ -5,11 +5,15 @@ module.exports = {
 
   list: function (req, res) {
 
-    const error = chance.bool();
+    var totalUsers = UsersService.getUsers();
+    var offset = req.param('offset');
+    var pagesize = req.param('pagesize');
+
     var response =
       {
         "data": {
-          "users": UsersService.getUsers()
+          "users": totalUsers.slice(offset, offset+pagesize),
+          "total_items": UsersService.getUsers().length
         }
       }
 
@@ -17,7 +21,6 @@ module.exports = {
   },
 
   getDetails: function (req, res) {
-    console.log('param: %s', req.param('id'));
     var tempUser = UsersService.getUser(req.param('id'));
     var response =
       {
