@@ -5,7 +5,7 @@ A basic Angular 6 application that offers you basic login, routing and a getting
 - [x] Basic Authentication
 - [x] Protected routes with guards
 - [x] HTTP Interceptors
-- [x] Translations (i18n) ready
+- [x] Translations & Multilanguage (i18n) ready
 - [x] Bootstrap 4
 - [x] Angular Material & PrimeNg inclusion
 - [x] Polling example

@@ -71,7 +71,7 @@ const appRoutes: Routes = [
 
     // hashtag -> use useHash:true
     imports: [
-        RouterModule.forRoot(appRoutes, { useHash: false })
+        RouterModule.forRoot(appRoutes, { useHash: true })
     ],
     exports: [RouterModule]
 })
