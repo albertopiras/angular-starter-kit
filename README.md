@@ -1,6 +1,9 @@
 # Angular 6 Starter kit
 
 A basic Angular 6 application that offers you basic login, routing and a getting started template
+View online demo ---> [online demo]
+
+Demo is created using GitHub pages for the Frontend GUI and heroku server for the Backend
 
 - [x] Basic Authentication
 - [x] Protected routes with guards
@@ -8,6 +11,7 @@ A basic Angular 6 application that offers you basic login, routing and a getting
 - [x] Translations & Multilanguage (i18n) ready
 - [x] Bootstrap 4
 - [x] Angular Material & PrimeNg inclusion
+- [x] List - Pagitation - Filter example
 - [x] Polling example
 - [ ] websocket example (TO-DO)
 - [x] Real API simulation with nodeJS Backend service
@@ -42,3 +46,7 @@ License
 ----
 
 MIT
+
+
+[online demo]: <https://albertopiras.github.io/angular-starter-kit>
+  

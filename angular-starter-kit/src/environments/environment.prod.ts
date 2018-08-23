@@ -1,6 +1,5 @@
 export const environment = {
   production: true,
-  CUSTOM_BASE_PATH:"angular-starter-kit",
   AUTHENTICATION: {
     TOKENNAME: 'session-id'
   },

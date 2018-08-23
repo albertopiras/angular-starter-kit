@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  CUSTOM_BASE_PATH:"",
   AUTHENTICATION: {
     TOKENNAME: 'session-id'
   },
