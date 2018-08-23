@@ -1,6 +1,7 @@
 # Angular 6 Starter kit
 
 A basic Angular 6 application that offers you basic login, routing and a getting started template
+
 View online demo ---> [online demo]
 
 Demo is created using GitHub pages for the Frontend GUI and heroku server for the Backend
