@@ -14,26 +14,33 @@ module.exports = {
     console.log(gender);
 
     tempUsersResponse = totalUsers.slice();
+    
     if (name) {
+      console.log('name filter');
       tempUsersResponse = _.filter(tempUsersResponse, function (item) {
         console.log(item.name);
         return item.name.toLowerCase().includes(name.toLowerCase());
       });
     }
+
     if (gender) {
+      console.log('gender filter');
       var tempUsersResponse = _.filter(tempUsersResponse, function (item) {
         return item.gender === gender;
       });
     }
 
-    if (offset & pagesize) {
-      tempUsersResponse.slice(offset, offset + pagesize);
+    paginatedResult = tempUsersResponse;
+
+    if (!_.isUndefined(offset) &&!_.isUndefined(pagesize)) {
+      console.log('pages filter ' + offset + "  " +  pagesize);
+      paginatedResult = paginatedResult.slice(offset, offset + pagesize);
     }
 
     var response =
       {
         "data": {
-          "users": tempUsersResponse.slice(),
+          "users": paginatedResult.slice(),
           "total_items": tempUsersResponse.length
         }
       }

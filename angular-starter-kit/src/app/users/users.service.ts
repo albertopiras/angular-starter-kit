@@ -15,9 +15,13 @@ export class UsersService {
     currentFilters = {}
 
     getUserList(filters: any) {
+        debugger;
         // returns an observable, this will be used in user-filter.component
         return new Observable<any>(observer => {
             this.currentFilters = { ...this.currentFilters, ...filters };
+            if(!filters['offset']){
+                this.currentFilters['offset'] = 0;
+            }
             this.http.post([
                 environment.BACKEND.URL.FULL,
                 environment.BACKEND.ENTRY_POINTS.USERS

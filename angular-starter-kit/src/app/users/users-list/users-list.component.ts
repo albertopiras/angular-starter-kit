@@ -90,7 +90,9 @@ export class UsersListComponent implements OnInit, OnDestroy {
     this.selection.clear();
   }
 
-
+  resetPaginatorIndex(){
+    this.pageIndex = 0;
+  }
 
   selectRow(row: any) {
       //single select

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { UsersListComponent } from './users-list/users-list.component';
 
 @Component({
   selector: 'app-users',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
-  selectedUser = {};
 
+  @ViewChild(UsersListComponent) child:UsersListComponent;
+
+  selectedUser = {};
+  constructor() { }
   ngOnInit() {
 
+  }
+
+  resetPaginationOffset(){
+    this.child.resetPaginatorIndex();
   }
 
   updateUserPreview(event:Event){

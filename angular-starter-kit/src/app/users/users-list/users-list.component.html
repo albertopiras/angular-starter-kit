@@ -34,7 +34,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <mat-paginator [length]="totalCount" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20, 100]" (page)="updateList($event)"
+      <mat-paginator [length]="totalCount" [pageIndex]="pageIndex" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20, 100]" (page)="updateList($event)"
         showFirstLastButtons>
       </mat-paginator>
     </div>

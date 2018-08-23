@@ -1,7 +1,7 @@
 <h3 class="text-center page-title">{{ 'pages.users.title' | translate }}</h3>
 <div class="row">
   <div class="col-12">
-    <users-filter></users-filter>
+    <users-filter (filterApplied)="resetPaginationOffset($event)" ></users-filter>
   </div>
 </div>
 <div class="row margin-top-large">

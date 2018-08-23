@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 
 import {
   trigger,
@@ -41,6 +41,8 @@ export class UsersFilterComponent implements OnInit {
   constructor(private usersService: UsersService, private toastrService: ToastrService) {
   }
 
+  @Output() filterApplied = new EventEmitter<boolean>();
+
   ngOnInit() {
     this.onSubmit();
   }
@@ -50,6 +52,7 @@ export class UsersFilterComponent implements OnInit {
     const filters = {};
     filters['name'] = this.currentForm.value.barcode;
     filters['gender'] = this.genderGroup.value;
+    this.filterApplied.emit(true);
 
     this.usersService.getUserList(filters).subscribe((success)=>{
       // console.log('filter applied');
