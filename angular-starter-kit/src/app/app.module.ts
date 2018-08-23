@@ -40,6 +40,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { CalendarModule } from 'primeng/calendar';
 
+import { environment } from '../environments/environment'; // as per your path
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,5 +104,6 @@ export class AppModule { }
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, environment.CUSTOM_BASE_PATH + '/assets/i18n/', '.json');
+
 }
