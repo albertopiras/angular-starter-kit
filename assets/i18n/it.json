@@ -1,0 +1,42 @@
+{
+    "app":{
+        "title":"Angular Stater Kit",
+        "alternativeTitle":"ngular Stater Kit"
+    },
+    "pages": {
+        "login": {
+            "user": "Utente",
+            "password": "Password",
+            "do_login": "Entra",
+            "login": "login",
+            "login_title": "Accedi"
+        },
+        "dashboard":{
+            "menuTitle":"Dashboard",
+            "title": "Sales",
+            "chartTitle": "Sales of Samsung & iPhone"
+        },
+        "users":{
+            "menuTitle":"Users",
+            "title": "Users",
+            "name":"Nome",
+            "surname":"Cognome",
+            "address":"Indirizzo",
+            "gender":"Sesso",
+            "email":"Email",
+            "filter":{
+                "do_filter":"Filtra",
+                "male":"Uomo",
+                "female":"Donna",
+                "both":"Entrambi"
+            }
+        },
+        "invoices":{
+            "menuTitle":"Invoices"
+        }
+    },
+    "general": {
+        "filter": "filter",
+        "filters": "filters"
+    }
+}
