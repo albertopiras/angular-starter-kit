@@ -1,7 +1,7 @@
 import { Subject } from "rxjs";
 import { Router } from "@angular/router";
 import { Injectable, setTestabilityGetter } from "@angular/core";
-import { HttpClient } from "@angular/common/http"
+import { HttpClient, HttpHeaders } from "@angular/common/http"
 import * as moment from "moment";
 
 import { environment } from '../environments/environment';
@@ -25,13 +25,21 @@ export class AuthService {
     }
 
     login(user: any) {
+
+        const headers = new HttpHeaders({
+            "Authorization": "Basic " + btoa(user.username + ":" + user.pwd)
+        });
+
         return this.httpClient.post([
             environment.BACKEND.URL.FULL,
             environment.BACKEND.ENTRY_POINTS.SIGNIN
         ].join(''), {
                 username: user.username,
                 password: user.pwd
-            }, { observe: 'response' })
+            }, {
+                headers: headers,
+                observe: "response"
+            })
             .pipe(tap((data) => {
                 console.log('login - server response: ' + data);
                 if (data) {

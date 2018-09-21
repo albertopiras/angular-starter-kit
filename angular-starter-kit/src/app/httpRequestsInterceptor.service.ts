@@ -12,12 +12,13 @@ export class RequestsInterceptor implements HttpInterceptor {
     constructor(private authenticationService: AuthService) { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        const headers = new HttpHeaders();
-        headers[environment.AUTHENTICATION.TOKENNAME] = this.authenticationService.getToken()
+
         const authReq = request.clone({
-            headers: headers
+            setHeaders: { 'session-id': this.authenticationService.getToken() }
         });
+
         return next.handle(authReq);
+
     }
 
 }
