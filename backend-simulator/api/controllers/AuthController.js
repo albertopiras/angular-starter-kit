@@ -4,10 +4,21 @@ const ADMIN_CREDENTIALS = {
   username: 'admin',
   password: 'admin'
 }
+const https = require('https');
+var timeout;
+
 module.exports = {
 
   login: function (req, res) {
     var currentCredentials = req.body;
+
+    /*** uncomment this if the hosting server falls asleep after X minutes of inactivity **/
+    // try {
+    //   var address = "https://" + req.host;
+    //   stayAwakePlz(address);
+    // } catch (err) {
+    //   console.log('error in stayAwakePlz');
+    // }
 
     if (_.isEqual(ADMIN_CREDENTIALS, currentCredentials)) {
       if (_.isEqual(SessionService.getSession(), {})) {
@@ -23,7 +34,6 @@ module.exports = {
           }
         }
       );
-
     }
     else {
       /* wrong credentials */
@@ -56,3 +66,27 @@ module.exports = {
   },
 
 };
+
+
+// This method allows the program to make a get request to the server where it is hosted, to awoid sleeping.
+function stayAwakePlz(urlParam) {
+
+  if (!timeout) {
+    console.log('doing stayAwakePlz ' + urlParam);
+
+    https.get(urlParam, (resp) => {
+      let data = '';
+      resp.on('data', (chunk) => {
+        data += chunk;
+      });
+      resp.on('end', (res) => {
+        console.log('stayAwakePlz success');
+      });
+    }).on("error", (err) => {
+      console.log('stayAwakePlz error');
+    });
+    setTimeout(() => {
+      stayAwakePlz(urlParam);
+    }, 1000 * 60 * 30);
+  }
+}
