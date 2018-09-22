@@ -1,7 +1,7 @@
 {
     "app":{
         "title":"Angular Stater Kit",
-        "alternativeTitle":"ngular Stater Kit"
+        "alternativeTitle":"ngular Starter Kit"
     },
     "pages": {
         "login": {
