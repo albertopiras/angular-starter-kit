@@ -4,6 +4,8 @@ A basic Angular 6 application that offers you basic login, routing and a getting
 
 View online demo ---> [online demo]
 
+(**The Backend Service is hosted on a free cloud platform - it could take 20 seconds at the first load before responding**)
+
 Demo is created using GitHub pages for the Frontend GUI and heroku server for the Backend
 
 - [x] Basic Authentication
